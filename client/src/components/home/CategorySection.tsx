@@ -1,84 +1,88 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 
 const categories = [
   {
-    title: 'Eyes',
-    image: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop',
-    href: '/shop?category=eyes'
+    name: 'Skincare',
+    slug: 'skincare',
+    description: 'Nourish and revitalize with nature\'s finest.',
+    image: 'https://images.unsplash.com/photo-1590156221122-c4462101aa04?auto=format&fit=crop&q=80&w=800',
+    gridClass: 'lg:col-span-2'
   },
   {
-    title: 'Face',
-    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc4033c8?q=80&w=800&auto=format&fit=crop',
-    href: '/shop?category=face'
+    name: 'Makeup',
+    slug: 'makeup',
+    description: 'Enhance your beauty with elegant formulas.',
+    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc4033c8?auto=format&fit=crop&q=80&w=800',
+    gridClass: 'lg:col-span-1'
   },
   {
-    title: 'Lips',
-    image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?q=80&w=800&auto=format&fit=crop',
-    href: '/shop?category=lips'
+    name: 'Fragrance',
+    slug: 'fragrance',
+    description: 'Captivate the senses with timeless scents.',
+    image: 'https://images.unsplash.com/photo-1583467875263-d50dec37a88c?auto=format&fit=crop&q=80&w=800',
+    gridClass: 'lg:col-span-1'
   },
   {
-    title: 'Skin Care',
-    image: 'https://images.unsplash.com/photo-1570172234560-969c379bc360?q=80&w=800&auto=format&fit=crop',
-    href: '/shop?category=skincare'
+    name: 'Haircare',
+    slug: 'haircare',
+    description: 'Luxurious care for radiant, healthy hair.',
+    image: 'https://images.unsplash.com/photo-1527799822340-30b0e5131976?auto=format&fit=crop&q=80&w=800',
+    gridClass: 'lg:col-span-2'
   }
 ];
 
-export default function CategorySection() {
+const CategorySection = () => {
   return (
     <section className="section-padding bg-beauty-bg">
       <div className="container-custom">
-        <div className="text-center mb-20 max-w-3xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-heading mb-6"
-          >
-            Our Beauty Products
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-charcoal/60 text-lg md:text-xl leading-relaxed"
-          >
-            Discover the world of beauty with our carefully crafted products designed to enhance your natural beauty and elevate your skincare and makeup routine.
-          </motion.p>
+        <div className="max-w-xl mb-24">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-gold font-bold mb-4 block">The Collections</span>
+          <h2 className="heading-large mb-8">Curated for Every Ritual</h2>
+          <p className="text-charcoal/60 font-light leading-relaxed">
+            Explore our meticulously crafted collections, each designed to address your unique needs with the purity of botanical science.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((cat, i) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {categories.map((category, i) => (
             <motion.div
-              key={cat.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              key={category.slug}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative group aspect-[3/4] overflow-hidden rounded-2xl cursor-pointer"
+              transition={{ delay: i * 0.1, duration: 0.8 }}
+              className={`group relative overflow-hidden rounded-[3rem] aspect-[4/3] lg:aspect-auto ${category.gridClass} h-[500px] shadow-premium`}
             >
               <img 
-                src={cat.image} 
-                alt={cat.title} 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                src={category.image} 
+                alt={category.name} 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-charcoal/30 group-hover:bg-charcoal/40 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
               
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6 text-center">
-                <h3 className="text-3xl md:text-4xl font-heading mb-4 tracking-wide group-hover:scale-105 transition-transform duration-500">
-                  {cat.title}
-                </h3>
-                <Link 
-                  href={cat.href}
-                  className="relative text-xs uppercase tracking-[0.3em] font-bold py-2 group/link"
+              <div className="absolute inset-0 p-12 flex flex-col justify-end">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
                 >
-                  Shop Now
-                  <span className="absolute bottom-0 left-0 w-full h-[1px] bg-white transform origin-left transition-transform duration-500 group-hover/link:scale-x-110" />
-                </Link>
+                  <h3 className="text-3xl font-heading text-white mb-4">{category.name}</h3>
+                  <p className="text-white/70 text-sm font-light max-w-xs mb-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                    {category.description}
+                  </p>
+                  <Link 
+                    href={`/shop?category=${category.slug}`}
+                    className="inline-flex items-center gap-3 text-white text-[10px] uppercase tracking-[0.3em] font-bold group/link"
+                  >
+                    Explore <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center group-hover/link:bg-white group-hover/link:text-charcoal transition-all duration-500">
+                      <ArrowUpRight size={14} />
+                    </div>
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           ))}
@@ -86,4 +90,6 @@ export default function CategorySection() {
       </div>
     </section>
   );
-}
+};
+
+export default CategorySection;
