@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rose-soft: #F9E3E3;
+  --color-charcoal: #2D2D2D;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F4E8C1;
+  --color-beauty-bg: #FFFBFB;
+  --color-warm-gray: #F5F3F0;
+  --color-blush: #E8B4B8;
+  --color-cream: #FFF8F0;
+  --color-dark-brown: #3E2723;
+
+  --font-heading: var(--font-heading), serif;
+  --font-body: var(--font-body), sans-serif;
+
+  --shadow-premium: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.03);
+}
+
+:root {
+  --background: var(--color-beauty-bg);
+  --foreground: var(--color-charcoal);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-glass);
+}
+
+.btn-premium {
+  @apply relative px-10 py-4 overflow-hidden rounded-full bg-charcoal text-white font-medium text-sm tracking-widest uppercase transition-all duration-500 hover:shadow-2xl hover:shadow-charcoal/20 active:scale-95;
+}
+
+.btn-outline-premium {
+  @apply px-10 py-4 rounded-full border border-charcoal/10 text-charcoal font-medium text-sm tracking-widest uppercase transition-all duration-500 hover:border-gold hover:text-gold hover:bg-gold/5;
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto px-8 md:px-16;
+}
+
+.section-padding {
+  @apply py-28 md:py-40;
+}
+
+.heading-medium {
+  @apply text-2xl sm:text-3xl md:text-4xl font-heading font-medium leading-tight;
+}
