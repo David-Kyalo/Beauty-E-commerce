@@ -10,6 +10,8 @@
   --color-blush: #E8B4B8;
   --color-cream: #FFF8F0;
   --color-dark-brown: #3E2723;
+  --color-footer-top: #6B3E2E;
+  --color-footer-bottom: #2D241E;
 
   --font-heading: var(--font-heading), serif;
   --font-body: var(--font-body), sans-serif;
