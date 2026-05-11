@@ -54,7 +54,7 @@ export default function Footer() {
             {/* Brand Column */}
             <div className="space-y-8">
               <h3 className="text-3xl font-heading font-bold text-white tracking-tighter">
-                Glowmart<span className="text-gold">.</span>
+                Peachy Cherie<span className="text-gold">.</span>
               </h3>
               <p className="text-sm leading-relaxed font-light max-w-xs">
                 Powered by nature, backed by science. Gentle on your skin, fierce on results.
@@ -106,11 +106,11 @@ export default function Footer() {
                 </li>
                 <li className="flex flex-col gap-1">
                   <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Location</span>
-                  <span className="text-white">115 Palm Forest, Australia</span>
+                  <span className="text-white">Mombasa, Kenya</span>
                 </li>
                 <li className="flex flex-col gap-1">
                   <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Email</span>
-                  <Link href="mailto:hello@glowmart.com" className="text-white hover:text-gold transition-colors">hello@glowmart.com</Link>
+                  <Link href="mailto:hello@peachycherie.com" className="text-white hover:text-gold transition-colors">hello@peachycherie.com</Link>
                 </li>
               </ul>
             </div>
@@ -118,7 +118,7 @@ export default function Footer() {
 
           <div className="mt-24 pt-12 border-t border-white/5 text-center">
             <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-white/20">
-              © 2026 GLOWMART PREMIUM BEAUTY. ALL RIGHTS RESERVED.
+              © 2026 PEACHY CHERIE PREMIUM BEAUTY. ALL RIGHTS RESERVED.
             </p>
           </div>
         </div>
