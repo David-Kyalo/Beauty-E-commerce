@@ -66,7 +66,7 @@ export default function Footer() {
                 <Link href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-white transition-all">
                   <Linkedin size={18} />
                 </Link>
-                <Link href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-white transition-all">
+                <Link href="https://www.instagram.com/peachycherie.ke/" target="_blank" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-white transition-all">
                   <Instagram size={18} />
                 </Link>
               </div>
