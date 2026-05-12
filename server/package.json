@@ -1,10 +1,9 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "type": "module",
   "scripts": {
     "dev": "tsx src/index.ts",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json",
     "start": "node dist/src/index.js",
     "test": "jest",
     "migrate": "npx prisma migrate dev",
@@ -24,16 +23,14 @@
     "morgan": "^1.10.1",
     "winston": "^3.11.0",
     "zod": "^3.22.4",
-    "@types/node": "^20.0.0"
-  },
-  "devDependencies": {
+    "@types/node": "^20.0.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
-    "@types/jest": "^29.5.11",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/morgan": "^1.9.10",
-    "@types/morgan": "^1.9.10",
+    "@types/morgan": "^1.9.10"
+  },
+  "devDependencies": {
     "jest": "^29.7.0",
     "prisma": "^6.4.1",
     "supertest": "^6.3.3",

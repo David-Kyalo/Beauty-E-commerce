@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Navbar from '@/components/layout/Navbar';
 import api from '@/lib/api';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, ShoppingBag, SlidersHorizontal } from 'lucide-react';
@@ -32,8 +31,6 @@ export default function ShopPage() {
 
   return (
     <div className="min-h-screen bg-beauty-bg pt-40">
-      <Navbar />
-      
       <div className="container-custom">
         <header className="mb-20">
           <h1 className="display-large mb-6">The Collection</h1>
@@ -114,12 +111,6 @@ export default function ShopPage() {
           </div>
         )}
       </div>
-
-      <footer className="mt-40 py-20 bg-charcoal text-white/40">
-        <div className="container-custom text-center">
-          <p className="text-[10px] uppercase tracking-[0.4em] font-bold">© 2026 PEACHY CHERIE PREMIUM BEAUTY. ALL RIGHTS RESERVED.</p>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -1,7 +1,10 @@
 import dotenv from 'dotenv';
 import { z } from 'zod';
 
-dotenv.config();
+import path from 'path';
+
+// Load .env from the server root using CommonJS __dirname
+dotenv.config({ path: path.join(__dirname, '../../.env') });
 
 const envSchema = z.object({
   PORT: z.string().default('5000'),
