@@ -22,6 +22,18 @@ const carouselProducts = [
     badge: "Best Seller",
     image: 'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&q=80&w=1000',
     color: '#E8B4B8'
+  },
+  {
+    name: 'Rose Water Face Mist',
+    badge: "Limited Edition",
+    image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&q=80&w=1000',
+    color: '#F9E3E3'
+  },
+  {
+    name: 'Purifying Clay Mask',
+    badge: "Expert Pick",
+    image: 'https://images.unsplash.com/photo-1590156546946-ce55a12a6a5d?auto=format&fit=crop&q=80&w=1000',
+    color: '#D4E8D4'
   }
 ];
 
@@ -36,7 +48,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex items-center overflow-hidden bg-[#FDFBF9]">
+    <section className="relative h-screen w-full flex items-center overflow-hidden bg-[#FDFBF9] pt-32">
       {/* Background Gradient / Textures */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#F9E3E3]/30 to-transparent" />
