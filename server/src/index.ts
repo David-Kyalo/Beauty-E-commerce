@@ -24,6 +24,7 @@ app.use(morgan('dev'));
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
+app.get('/', (req, res) => res.status(200).json({ status: 'success', message: 'Welcome to Peachy Cherie API', documentation: 'Coming soon' }));
 app.get('/health', (req, res) => res.status(200).json({ status: 'success', message: 'Healthy', timestamp: new Date().toISOString() }));
 
 app.use('/api/auth', authRoutes);
