@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import api from '@/lib/api';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, ShoppingBag, SlidersHorizontal } from 'lucide-react';
@@ -8,12 +9,19 @@ import { useCartStore } from '@/store/useCartStore';
 import Link from 'next/link';
 
 export default function ShopPage() {
+  const searchParams = useSearchParams();
   const [products, setProducts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState(searchParams.get('category') || '');
   const [categories, setCategories] = useState<any[]>([]);
   const { addItem } = useCartStore();
+
+  // Sync category state when URL query changes
+  useEffect(() => {
+    const urlCategory = searchParams.get('category') || '';
+    setCategory(urlCategory);
+  }, [searchParams]);
 
   useEffect(() => {
     fetchProducts();
