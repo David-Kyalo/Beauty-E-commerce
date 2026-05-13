@@ -55,7 +55,7 @@ const CategorySection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.8 }}
-              className={`group relative overflow-hidden rounded-[3rem] aspect-[4/3] lg:aspect-auto ${category.gridClass} h-[500px] shadow-premium`}
+              className={`group relative overflow-hidden rounded-[3rem] aspect-[4/3] lg:aspect-auto ${category.gridClass} h-[400px] md:h-[500px] shadow-premium`}
             >
               <img 
                 src={category.image} 
@@ -64,7 +64,7 @@ const CategorySection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
               
-              <div className="absolute inset-0 p-12 flex flex-col justify-end">
+              <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}

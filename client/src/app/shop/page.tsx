@@ -39,11 +39,11 @@ function ShopContent() {
   };
 
   return (
-    <div className="min-h-screen bg-beauty-bg pt-40">
+    <div className="min-h-screen bg-beauty-bg pt-24 md:pt-40 pb-20">
       <div className="container-custom">
-        <header className="mb-20">
-          <h1 className="display-large mb-6">The Collection</h1>
-          <p className="text-charcoal/50 max-w-2xl">Browse our complete range of premium beauty products, meticulously crafted for your daily ritual.</p>
+        <header className="mb-12 md:mb-20">
+          <h1 className="text-4xl md:text-6xl font-heading mb-4 md:mb-6">The Collection</h1>
+          <p className="text-charcoal/50 max-w-2xl text-sm md:text-base">Browse our complete range of premium beauty products, meticulously crafted for your daily ritual.</p>
         </header>
 
         {/* Filters */}

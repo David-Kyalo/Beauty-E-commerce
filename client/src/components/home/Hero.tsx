@@ -48,14 +48,14 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex items-center overflow-hidden bg-[#FDFBF9] pt-32">
+    <section className="relative min-h-screen w-full flex items-center overflow-hidden bg-[#FDFBF9] pt-24 pb-12 md:pt-32 md:pb-0">
       {/* Background Gradient / Textures */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#F9E3E3]/30 to-transparent" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-[100px]" />
       </div>
 
-      <div className="container-custom relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container-custom relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -74,7 +74,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-6xl md:text-8xl font-heading leading-[1.1] mb-8 text-[#2D2D2D]"
+            className="text-4xl sm:text-5xl md:text-8xl font-heading leading-[1.1] mb-6 md:mb-8 text-[#2D2D2D]"
           >
             Elevate Your <br />
             <span className="italic font-light text-[#D4AF37]">Natural Glow</span>
@@ -83,7 +83,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-lg text-[#2D2D2D]/60 max-w-lg mb-12 leading-relaxed"
+            className="text-base md:text-lg text-[#2D2D2D]/60 max-w-lg mb-8 md:mb-12 leading-relaxed"
           >
             Discover our curated collection of botanical-infused formulas designed to nourish your skin and inspire a moment of daily tranquility.
           </motion.p>
@@ -91,7 +91,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex items-center gap-8"
+            className="flex items-center gap-6 md:gap-8"
           >
             <Link href="/shop" className="btn-premium">
               Shop Now
@@ -103,8 +103,8 @@ const Hero = () => {
         </motion.div>
 
         {/* Product Image Carousel */}
-        <div className="relative flex flex-col items-center lg:items-end">
-          <div className="relative w-full max-w-md aspect-[4/5]">
+        <div className="relative flex flex-col items-center lg:items-end mt-8 lg:mt-0">
+          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-[4/5]">
             {/* Abstract background shape */}
             <motion.div 
               animate={{ 
@@ -140,7 +140,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0, x: 0 }}
                 exit={{ opacity: 0, y: -20, x: 10 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="absolute -bottom-8 -left-8 glass p-6 rounded-3xl shadow-premium max-w-[220px] z-20"
+                className="absolute -bottom-6 -left-4 sm:-bottom-8 sm:-left-8 glass p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-premium max-w-[180px] sm:max-w-[220px] z-20"
               >
                 <p className="text-[9px] uppercase tracking-widest text-[#D4AF37] font-bold mb-2">
                   {carouselProducts[currentIndex].badge}

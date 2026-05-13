@@ -84,11 +84,11 @@ export default function ProductDetailPage() {
   const inStock = product.stock > 0;
 
   return (
-    <div className="min-h-screen bg-beauty-bg pt-32 pb-20">
+    <div className="min-h-screen bg-beauty-bg pt-24 md:pt-32 pb-20">
       <div className="container-custom">
 
         {/* Breadcrumbs */}
-        <nav className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-bold text-charcoal/40 mb-16">
+        <nav className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-bold text-charcoal/40 mb-10 md:mb-16">
           <Link href="/" className="hover:text-gold transition-colors">Home</Link>
           <ChevronRight size={12} />
           <Link href="/shop" className="hover:text-gold transition-colors">Shop</Link>
@@ -101,20 +101,20 @@ export default function ProductDetailPage() {
               <ChevronRight size={12} />
             </>
           )}
-          <span className="text-charcoal/70">{product.name}</span>
+          <span className="text-charcoal/70 truncate max-w-[150px] md:max-w-none">{product.name}</span>
         </nav>
 
         {/* Product Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-24">
 
           {/* Left: Image Gallery */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {/* Main Image */}
             <motion.div
               key={selectedImage}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="aspect-square bg-white rounded-[3rem] overflow-hidden border border-charcoal/5 shadow-sm"
+              className="aspect-square bg-white rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-charcoal/5 shadow-sm"
             >
               <img
                 src={images[selectedImage]}
@@ -125,12 +125,12 @@ export default function ProductDetailPage() {
 
             {/* Thumbnail Strip */}
             {images.length > 1 && (
-              <div className="flex gap-4">
+              <div className="flex gap-3 md:gap-4 overflow-x-auto pb-2 no-scrollbar">
                 {images.map((img: string, idx: number) => (
                   <button
                     key={idx}
                     onClick={() => setSelectedImage(idx)}
-                    className={`w-20 h-20 rounded-2xl overflow-hidden border-2 transition-all ${
+                    className={`w-16 h-16 md:w-20 md:h-20 flex-shrink-0 rounded-xl md:rounded-2xl overflow-hidden border-2 transition-all ${
                       selectedImage === idx 
                         ? 'border-gold shadow-lg scale-105' 
                         : 'border-charcoal/5 opacity-60 hover:opacity-100'
@@ -144,19 +144,19 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Right: Product Info */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             {/* Title */}
             <div>
-              <h1 className="text-3xl md:text-4xl font-heading font-bold leading-tight mb-6">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold leading-tight mb-4 md:mb-6">
                 {product.name}
               </h1>
 
               {/* Price & Stock */}
-              <div className="flex items-center gap-6">
-                <span className="text-3xl font-heading font-bold text-charcoal">
+              <div className="flex flex-wrap items-center gap-4 md:gap-6">
+                <span className="text-2xl md:text-3xl font-heading font-bold text-charcoal">
                   KSH {Number(product.price).toLocaleString()}
                 </span>
-                <span className={`px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest border ${
+                <span className={`px-4 md:px-5 py-1.5 md:py-2 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest border ${
                   inStock 
                     ? 'border-green-300 text-green-700 bg-green-50' 
                     : 'border-red-300 text-red-700 bg-red-50'
@@ -224,23 +224,23 @@ export default function ProductDetailPage() {
             <div className="h-px bg-charcoal/5" />
 
             {/* Quantity & Add to Cart */}
-            <div className="flex items-center gap-6">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 md:gap-6">
               {/* Quantity Selector */}
-              <div className="flex items-center border border-charcoal/10 rounded-full overflow-hidden">
+              <div className="flex items-center border border-charcoal/10 rounded-full overflow-hidden self-start sm:self-auto">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="w-14 h-14 flex items-center justify-center hover:bg-warm-gray transition-colors"
+                  className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center hover:bg-warm-gray transition-colors"
                 >
-                  <Minus size={18} />
+                  <Minus size={16} />
                 </button>
-                <span className="w-14 h-14 flex items-center justify-center text-lg font-bold border-x border-charcoal/10">
+                <span className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-base md:text-lg font-bold border-x border-charcoal/10">
                   {quantity}
                 </span>
                 <button
                   onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
-                  className="w-14 h-14 flex items-center justify-center hover:bg-warm-gray transition-colors"
+                  className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center hover:bg-warm-gray transition-colors"
                 >
-                  <Plus size={18} />
+                  <Plus size={16} />
                 </button>
               </div>
 
@@ -248,7 +248,7 @@ export default function ProductDetailPage() {
               <button
                 onClick={handleAddToCart}
                 disabled={!inStock || addingToCart}
-                className="flex-1 btn-premium py-5 text-sm flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 btn-premium py-4 md:py-5 text-[10px] md:text-sm flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {addingToCart ? (
                   <Loader2 size={18} className="animate-spin" />

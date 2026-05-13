@@ -31,7 +31,7 @@ export default function Navbar() {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'glass py-4' : 'bg-transparent py-8'} ${useLightText ? 'text-[#FFF8F0]' : ''}`}>
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className={`text-3xl font-heading font-bold tracking-tighter group ${useLightText ? 'text-[#FFF8F0]' : ''}`}>
+        <Link href="/" className={`text-xl sm:text-2xl md:text-3xl font-heading font-bold tracking-tighter group ${useLightText ? 'text-[#FFF8F0]' : ''}`}>
           PEACHY CHERIE<span className={`${useLightText ? 'text-gold' : 'text-gold'} group-hover:text-charcoal transition-colors duration-500`}>.</span>
         </Link>
 
@@ -49,7 +49,7 @@ export default function Navbar() {
         </div>
 
         {/* Icons */}
-        <div className="flex items-center gap-6 md:gap-8">
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
           <button className="hover:text-gold transition-colors">
             <Search size={22} strokeWidth={1.5} />
           </button>

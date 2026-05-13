@@ -28,9 +28,9 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <section className="py-32 bg-white">
+    <section className="py-20 md:py-32 bg-white">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
           {benefits.map((benefit, i) => (
             <motion.div
               key={i}
