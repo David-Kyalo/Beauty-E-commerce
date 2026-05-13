@@ -60,7 +60,7 @@ const BestSellers = () => {
                     <ShoppingBag size={18} /> Add To Cart
                   </button>
                   <Link 
-                    href={`/products/${product.id}`}
+                    href={`/shop/${product.slug}`}
                     className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-3xl flex items-center justify-center text-white hover:bg-white hover:text-charcoal transition-all shadow-2xl"
                   >
                     <Eye size={22} />
@@ -74,11 +74,11 @@ const BestSellers = () => {
                 </div>
               </div>
 
-              <div className="text-center">
+              <Link href={`/shop/${product.slug}`} className="text-center block">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-gold font-bold mb-4">{product.category.name}</p>
                 <h3 className="text-2xl font-heading mb-4 group-hover:text-gold transition-colors duration-500">{product.name}</h3>
                 <p className="text-charcoal/40 font-medium tracking-[0.1em] text-lg">KSH {product.price.toLocaleString()}</p>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>

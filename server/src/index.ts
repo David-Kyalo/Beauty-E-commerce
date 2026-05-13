@@ -18,7 +18,25 @@ import categoryRoutes from './routes/category.routes';
 const app = express();
 
 app.use(helmet());
-app.use(cors({ origin: config.frontendUrl, credentials: true }));
+// Flexible CORS configuration
+const allowedOrigins = [
+  config.frontendUrl,
+  'http://localhost:3000',
+  /\.vercel\.app$/ // Allow all Vercel subdomains/previews
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.some(allowed => 
+      typeof allowed === 'string' ? allowed === origin : allowed.test(origin)
+    )) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 app.use('/api', apiLimiter);
 app.use(morgan('dev'));
 app.use(express.json({ limit: '10kb' }));

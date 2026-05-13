@@ -29,7 +29,7 @@ export default function RegisterPage() {
   const onSubmit = async (data: RegisterForm) => {
     try {
       const res = await api.post('/auth/register', data);
-      setAuth(res.data.data.user, res.data.data.token);
+      setAuth(res.data.data.user, res.data.data.token, res.data.data.refreshToken);
       toast.success('Account created successfully!');
       router.push('/');
     } catch (error) {
