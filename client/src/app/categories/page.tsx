@@ -48,7 +48,7 @@ export default function CategoriesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-beauty-bg pt-32 pb-20">
+    <div className="min-h-screen bg-beauty-bg pt-24 md:pt-32 pb-20">
       <div className="container-custom">
 
         {/* Header */}
@@ -56,27 +56,27 @@ export default function CategoriesPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-2xl mb-24"
+          className="max-w-2xl mb-12 md:mb-24"
         >
           <span className="text-[10px] uppercase tracking-[0.4em] text-gold font-bold mb-4 block">
             Browse Collections
           </span>
-          <h1 className="heading-large mb-8">Our Categories</h1>
-          <p className="text-charcoal/60 font-light leading-relaxed text-lg">
+          <h1 className="text-4xl md:text-6xl font-heading mb-6 md:mb-8">Our Categories</h1>
+          <p className="text-charcoal/60 font-light leading-relaxed text-base md:text-lg">
             Explore our meticulously crafted collections, each designed to address your unique beauty needs with the purity of botanical science.
           </p>
         </motion.div>
 
         {/* Categories Grid */}
         {categories.length > 0 ? (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             {categories.map((category, i) => (
               <motion.div
                 key={category.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1, duration: 0.8 }}
-                className={`group relative overflow-hidden rounded-[3rem] ${getGridClass(i)} h-[500px] shadow-premium`}
+                className={`group relative overflow-hidden rounded-[2.5rem] md:rounded-[3rem] ${getGridClass(i)} h-[350px] md:h-[500px] shadow-premium`}
               >
                 <img
                   src={category.image || categoryImages[category.slug] || defaultImage}
@@ -85,15 +85,15 @@ export default function CategoriesPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
 
-                <div className="absolute inset-0 p-12 flex flex-col justify-end">
+                <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 + i * 0.1 }}
                   >
-                    <h3 className="text-3xl font-heading text-white mb-4">{category.name}</h3>
+                    <h3 className="text-2xl md:text-3xl font-heading text-white mb-3 md:mb-4">{category.name}</h3>
                     {category.description && (
-                      <p className="text-white/70 text-sm font-light max-w-xs mb-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                      <p className="text-white/70 text-xs md:text-sm font-light max-w-xs mb-6 md:mb-8 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                         {category.description}
                       </p>
                     )}

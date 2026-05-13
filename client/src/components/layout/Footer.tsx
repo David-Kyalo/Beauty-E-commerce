@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="w-full">
       {/* Top Section: Newsletter */}
-      <div className="bg-footer-top text-white py-24">
+      <div className="bg-footer-top text-white py-16 md:py-24">
         <div className="container-custom text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -48,12 +48,12 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section: Links */}
-      <div className="bg-footer-bottom text-white/70 py-24">
+      <div className="bg-footer-bottom text-white/70 py-16 md:py-24">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 lg:gap-8">
             {/* Brand Column */}
-            <div className="space-y-8">
-              <h3 className="text-3xl font-heading font-bold text-white tracking-tighter">
+            <div className="space-y-6 md:space-y-8">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-white tracking-tighter">
                 Peachy Cherie<span className="text-gold">.</span>
               </h3>
               <p className="text-sm leading-relaxed font-light max-w-xs">
@@ -73,9 +73,9 @@ export default function Footer() {
             </div>
 
             {/* Navigation Column */}
-            <div className="space-y-8">
-              <h4 className="text-xl font-heading text-white font-medium">Navigation</h4>
-              <ul className="space-y-4 text-sm font-light">
+            <div className="space-y-6 md:space-y-8">
+              <h4 className="text-lg md:text-xl font-heading text-white font-medium">Navigation</h4>
+              <ul className="space-y-3 md:space-y-4 text-sm font-light">
                 <li><Link href="/" className="hover:text-gold transition-colors">Home</Link></li>
                 <li><Link href="/pages" className="hover:text-gold transition-colors">Pages</Link></li>
                 <li><Link href="/about" className="hover:text-gold transition-colors">About Us</Link></li>
@@ -85,9 +85,9 @@ export default function Footer() {
             </div>
 
             {/* Quick Links Column */}
-            <div className="space-y-8">
-              <h4 className="text-xl font-heading text-white font-medium">Quick Links</h4>
-              <ul className="space-y-4 text-sm font-light">
+            <div className="space-y-6 md:space-y-8">
+              <h4 className="text-lg md:text-xl font-heading text-white font-medium">Quick Links</h4>
+              <ul className="space-y-3 md:space-y-4 text-sm font-light">
                 <li><Link href="/contact" className="hover:text-gold transition-colors">Contact Us</Link></li>
                 <li><Link href="/faq" className="hover:text-gold transition-colors">FAQ</Link></li>
                 <li><Link href="/blog" className="hover:text-gold transition-colors">Blog</Link></li>
@@ -97,9 +97,9 @@ export default function Footer() {
             </div>
 
             {/* Information Column */}
-            <div className="space-y-8">
-              <h4 className="text-xl font-heading text-white font-medium">Information</h4>
-              <ul className="space-y-6 text-sm font-light">
+            <div className="space-y-6 md:space-y-8">
+              <h4 className="text-lg md:text-xl font-heading text-white font-medium">Information</h4>
+              <ul className="space-y-4 md:space-y-6 text-sm font-light">
                 <li className="flex flex-col gap-1">
                   <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Call Us</span>
                   <Link href="tel:+1051152920" className="text-white hover:text-gold transition-colors">(105) 115-2920</Link>
@@ -116,7 +116,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-24 pt-12 border-t border-white/5 text-center">
+          <div className="mt-16 md:mt-24 pt-8 md:pt-12 border-t border-white/5 text-center">
             <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-white/20">
               © 2026 PEACHY CHERIE PREMIUM BEAUTY. ALL RIGHTS RESERVED.
             </p>

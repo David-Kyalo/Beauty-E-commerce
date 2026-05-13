@@ -79,11 +79,11 @@ export default function CartPage() {
   const total = subtotal + shipping;
 
   return (
-    <div className="min-h-screen bg-beauty-bg pt-32 pb-20">
+    <div className="min-h-screen bg-beauty-bg pt-24 md:pt-32 pb-20">
       <div className="container-custom">
-        <h1 className="text-4xl font-heading font-bold mb-16 text-center lg:text-left">Shopping Cart</h1>
+        <h1 className="text-3xl md:text-4xl font-heading font-bold mb-10 md:mb-16 text-center lg:text-left">Shopping Cart</h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16 items-start">
           
           {/* Cart Table Area */}
           <div className="lg:col-span-2 space-y-8">
@@ -197,7 +197,7 @@ export default function CartPage() {
           </div>
 
           {/* Cart Totals Sidebar */}
-          <div className="bg-white rounded-[2.5rem] p-10 border border-charcoal/5 shadow-premium">
+          <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 border border-charcoal/5 shadow-premium">
             <h2 className="text-xl font-heading font-bold mb-8 pb-4 border-b border-charcoal/5">Cart Totals</h2>
             
             <div className="space-y-6 mb-10">

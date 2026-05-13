@@ -57,7 +57,7 @@ export default function OurStoryPage() {
     <div className="min-h-screen bg-beauty-bg">
 
       {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center overflow-hidden">
+      <section className="relative h-[70vh] md:h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=1600"
@@ -78,11 +78,11 @@ export default function OurStoryPage() {
             <span className="text-[11px] uppercase tracking-[0.5em] text-gold font-medium mb-6 block drop-shadow-lg">
               Our Story
             </span>
-            <h1 className="text-6xl md:text-8xl font-heading font-light leading-[1.1] mb-8 drop-shadow-xl" style={{ color: '#FFFFFF', textShadow: '0 2px 30px rgba(0,0,0,0.5)' }}>
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-heading font-light leading-[1.1] mb-6 md:mb-8 drop-shadow-xl" style={{ color: '#FFFFFF', textShadow: '0 2px 30px rgba(0,0,0,0.5)' }}>
               Beauty with <br />
               <span className="italic text-gold">Purpose</span>
             </h1>
-            <p className="text-lg leading-relaxed max-w-lg font-light" style={{ color: 'rgba(255,255,255,0.95)', textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}>
+            <p className="text-base md:text-lg leading-relaxed max-w-lg font-light" style={{ color: 'rgba(255,255,255,0.95)', textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}>
               We believe every woman deserves access to premium beauty products
               that celebrate her unique glow. That belief is the heart of Peachy Cherie.
             </p>
@@ -91,14 +91,14 @@ export default function OurStoryPage() {
       </section>
 
       {/* Mission Statement */}
-      <section className="py-40 bg-white">
+      <section className="py-24 md:py-40 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
             <motion.div {...fadeUp}>
               <span className="text-[10px] uppercase tracking-[0.4em] text-gold font-bold mb-4 block">
                 Our Mission
               </span>
-              <h2 className="heading-large mb-8 font-light">
+              <h2 className="text-3xl md:text-5xl font-heading font-light mb-8">
                 Bringing Premium Beauty to Every Doorstep
               </h2>
               <p className="text-charcoal/70 leading-relaxed mb-6 text-[15px]">
