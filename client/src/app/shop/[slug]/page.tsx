@@ -179,18 +179,42 @@ export default function ProductDetailPage() {
             {/* Key Benefits */}
             <div>
               <h3 className="text-sm font-bold uppercase tracking-widest mb-4 text-charcoal/80">
-                Key Benefits
+                Key Benefits:
               </h3>
               <ul className="space-y-2">
                 {[
-                  'Premium quality ingredients',
-                  'Dermatologically tested',
-                  'Suitable for all skin types',
-                  'Long-lasting formula',
+                  'Controls oil and shine for a matte finish',
+                  'Blurs pores for a smooth, refined look',
+                  'Lightweight, non-cakey formula',
+                  'Medium, buildable coverage',
+                  'Can be worn alone or used to set foundation',
+                  'Ideal for normal to oily skin types',
                 ].map((benefit, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-charcoal/60 text-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0" />
                     {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Ingredients Section */}
+            <div>
+              <h3 className="text-sm font-bold uppercase tracking-widest mb-4 text-charcoal/80">
+                Ingredients (Key Highlights):
+              </h3>
+              <ul className="space-y-2">
+                {[
+                  { name: 'Niacinamide', highlight: 'Helps visibly minimize enlarged pores' },
+                  { name: 'Squalane', highlight: 'Provides weightless hydration' },
+                  { name: 'Vitamin E', highlight: 'Antioxidant protection' },
+                  { name: 'Silica', highlight: 'Absorbs excess oil for a matte finish' },
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-charcoal/60 text-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0" />
+                    <span>
+                      <strong className="text-charcoal/80">{item.name}</strong> — {item.highlight}
+                    </span>
                   </li>
                 ))}
               </ul>

@@ -5,6 +5,7 @@ import api from '@/lib/api';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, ShoppingBag, SlidersHorizontal } from 'lucide-react';
 import { useCartStore } from '@/store/useCartStore';
+import Link from 'next/link';
 
 export default function ShopPage() {
   const [products, setProducts] = useState<any[]>([]);
