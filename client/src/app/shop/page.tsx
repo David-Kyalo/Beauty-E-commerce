@@ -1,14 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import api from '@/lib/api';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Filter, ShoppingBag, SlidersHorizontal } from 'lucide-react';
+import { Search, ShoppingBag, Loader2 } from 'lucide-react';
 import { useCartStore } from '@/store/useCartStore';
 import Link from 'next/link';
 
-export default function ShopPage() {
+function ShopContent() {
   const searchParams = useSearchParams();
   const [products, setProducts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -123,5 +123,17 @@ export default function ShopPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-beauty-bg pt-40 flex items-center justify-center">
+        <Loader2 size={48} className="animate-spin text-gold" />
+      </div>
+    }>
+      <ShopContent />
+    </Suspense>
   );
 }
