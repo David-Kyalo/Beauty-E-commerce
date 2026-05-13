@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import api from '@/lib/api';
 import { useAuthStore } from './useAuthStore';
+import toast from 'react-hot-toast';
 
 interface CartItem {
   id: string;
@@ -51,10 +52,18 @@ export const useCartStore = create<CartState>()(
       addItem: async (productId, quantity = 1) => {
         const { isAuthenticated } = useAuthStore.getState();
         if (isAuthenticated) {
-          await api.post('/cart/items', { productId, quantity });
-          await get().fetchCart();
+          try {
+            await api.post('/cart/items', { productId, quantity });
+            await get().fetchCart();
+            toast.success('Added to cart');
+          } catch (error) {
+            // error handled by interceptor
+          }
         } else {
-          // Local cart logic for guests (optional enhancement)
+          toast.error('Please login to add items to cart');
+          if (typeof window !== 'undefined') {
+            window.location.href = `/login?redirect=${window.location.pathname}`;
+          }
         }
       },
 
@@ -83,7 +92,12 @@ export const useCartStore = create<CartState>()(
       },
 
       totalAmount: () => {
-        return get().items.reduce((total, item) => total + Number(item.product.price) * item.quantity, 0);
+        return get().items.reduce((total, item) => {
+          if (!item.product) return total;
+          const price = Number(item.product.price) || 0;
+          const qty = Number(item.quantity) || 0;
+          return total + (price * qty);
+        }, 0);
       },
     }),
     {
