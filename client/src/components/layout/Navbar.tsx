@@ -2,16 +2,24 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useAuthStore } from '@/store/useAuthStore';
 import { useCartStore } from '@/store/useCartStore';
 import { ShoppingBag, User, Search, Menu, X, LogOut } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+// Pages with dark hero backgrounds that need light navbar text
+const darkHeroPages = ['/our-story'];
 
 export default function Navbar() {
   const { user, isAuthenticated, logout } = useAuthStore();
   const { items } = useCartStore();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isDarkHero = darkHeroPages.includes(pathname);
+  const useLightText = isDarkHero && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -20,11 +28,11 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'glass py-4' : 'bg-transparent py-8'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'glass py-4' : 'bg-transparent py-8'} ${useLightText ? 'text-[#FFF8F0]' : ''}`}>
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="text-3xl font-heading font-bold tracking-tighter group">
-          PEACHY CHERIE<span className="text-gold group-hover:text-charcoal transition-colors duration-500">.</span>
+        <Link href="/" className={`text-3xl font-heading font-bold tracking-tighter group ${useLightText ? 'text-[#FFF8F0]' : ''}`}>
+          PEACHY CHERIE<span className={`${useLightText ? 'text-gold' : 'text-gold'} group-hover:text-charcoal transition-colors duration-500`}>.</span>
         </Link>
 
         {/* Desktop Nav */}
