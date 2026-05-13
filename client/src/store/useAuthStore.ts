@@ -13,10 +13,11 @@ interface User {
 interface AuthState {
   user: User | null;
   token: string | null;
+  refreshToken: string | null;
   isAuthenticated: boolean;
   loading: boolean;
-  setAuth: (user: User, token: string) => void;
-  logout: () => void;
+  setAuth: (user: User, token: string, refreshToken: string) => void;
+  logout: () => Promise<void>;
   checkAuth: () => Promise<void>;
 }
 
@@ -25,20 +26,32 @@ export const useAuthStore = create<AuthState>()(
     (set, get) => ({
       user: null,
       token: null,
+      refreshToken: null,
       isAuthenticated: false,
       loading: false,
 
-      setAuth: (user, token) => {
-        set({ user, token, isAuthenticated: true });
+      setAuth: (user, token, refreshToken) => {
+        set({ user, token, refreshToken, isAuthenticated: true });
         if (typeof window !== 'undefined') {
           localStorage.setItem('token', token);
+          localStorage.setItem('refreshToken', refreshToken);
         }
       },
 
-      logout: () => {
-        set({ user: null, token: null, isAuthenticated: false });
+      logout: async () => {
+        const refreshToken = get().refreshToken;
+        try {
+          // Tell the server to revoke this refresh token
+          if (refreshToken) {
+            await api.post('/auth/logout', { refreshToken });
+          }
+        } catch (error) {
+          // Ignore errors during logout
+        }
+        set({ user: null, token: null, refreshToken: null, isAuthenticated: false });
         if (typeof window !== 'undefined') {
           localStorage.removeItem('token');
+          localStorage.removeItem('refreshToken');
         }
       },
 
@@ -51,7 +64,12 @@ export const useAuthStore = create<AuthState>()(
           const res = await api.get('/auth/me');
           set({ user: res.data.data.user, token, isAuthenticated: true });
         } catch (error) {
-          get().logout();
+          // If checkAuth fails (and auto-refresh also failed), clear state
+          set({ user: null, token: null, refreshToken: null, isAuthenticated: false });
+          if (typeof window !== 'undefined') {
+            localStorage.removeItem('token');
+            localStorage.removeItem('refreshToken');
+          }
         } finally {
           set({ loading: false });
         }
@@ -59,7 +77,12 @@ export const useAuthStore = create<AuthState>()(
     }),
     {
       name: 'auth-storage',
-      partialize: (state) => ({ user: state.user, token: state.token, isAuthenticated: state.isAuthenticated }),
+      partialize: (state) => ({
+        user: state.user,
+        token: state.token,
+        refreshToken: state.refreshToken,
+        isAuthenticated: state.isAuthenticated,
+      }),
     }
   )
 );

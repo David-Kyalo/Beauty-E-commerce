@@ -92,19 +92,21 @@ export default function ShopPage() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   className="group"
                 >
-                  <div className="aspect-[4/5] bg-warm-gray rounded-[3rem] overflow-hidden mb-8 relative">
-                    <img src={product.images[0]} alt={product.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                    <button 
-                      onClick={() => addItem(product.id)}
-                      className="absolute bottom-8 right-8 bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 hover:bg-gold hover:text-white"
-                    >
-                      <ShoppingBag size={22} strokeWidth={1.5} />
-                    </button>
-                  </div>
-                  <div className="px-4 text-center">
-                    <h4 className="font-heading text-2xl mb-2">{product.name}</h4>
-                    <p className="text-gold font-bold tracking-widest text-sm uppercase">KSH {product.price}</p>
-                  </div>
+                  <Link href={`/shop/${product.slug}`} className="block">
+                    <div className="aspect-[4/5] bg-warm-gray rounded-[3rem] overflow-hidden mb-8 relative">
+                      <img src={product.images[0]} alt={product.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                      <button 
+                        onClick={(e) => { e.preventDefault(); addItem(product.id); }}
+                        className="absolute bottom-8 right-8 bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 hover:bg-gold hover:text-white"
+                      >
+                        <ShoppingBag size={22} strokeWidth={1.5} />
+                      </button>
+                    </div>
+                    <div className="px-4 text-center">
+                      <h4 className="font-heading text-2xl mb-2">{product.name}</h4>
+                      <p className="text-gold font-bold tracking-widest text-sm uppercase">KSH {product.price}</p>
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </AnimatePresence>

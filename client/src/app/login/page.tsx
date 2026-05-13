@@ -32,7 +32,7 @@ function LoginForm() {
   const onSubmit = async (data: LoginForm) => {
     try {
       const res = await api.post('/auth/login', data);
-      setAuth(res.data.data.user, res.data.data.token);
+      setAuth(res.data.data.user, res.data.data.token, res.data.data.refreshToken);
       toast.success('Welcome back!');
       router.push(redirect);
     } catch (error) {
