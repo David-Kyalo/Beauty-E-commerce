@@ -2,16 +2,18 @@
 
 @theme {
   --color-rose-soft: #F9E3E3;
-  --color-charcoal: #2D2D2D;
-  --color-gold: #D4AF37;
+  --color-charcoal: #8A5A57;
+  --color-gold: #BC8E7B;
   --color-gold-light: #F4E8C1;
-  --color-beauty-bg: #FFFBFB;
+  --color-beauty-bg: #FEF7F5;
+  --color-peachy-soft: #F8C8BD;
   --color-warm-gray: #F5F3F0;
   --color-blush: #E8B4B8;
   --color-cream: #FFF8F0;
   --color-dark-brown: #3E2723;
   --color-footer-top: #6B3E2E;
   --color-footer-bottom: #2D241E;
+  --color-footer-gold: #D4AF37;
 
   --font-heading: var(--font-heading), serif;
   --font-body: var(--font-body), sans-serif;

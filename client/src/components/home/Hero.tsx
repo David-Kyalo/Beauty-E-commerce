@@ -48,11 +48,11 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full flex items-center overflow-hidden bg-[#FDFBF9] pt-24 pb-12 md:pt-32 md:pb-0">
+    <section className="relative min-h-screen w-full flex items-center overflow-hidden bg-beauty-bg pt-24 pb-12 md:pt-32 md:pb-0">
       {/* Background Gradient / Textures */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#F9E3E3]/30 to-transparent" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-[100px]" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-peachy-soft/30 to-transparent" />
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-gold/5 rounded-full blur-[100px]" />
       </div>
 
       <div className="container-custom relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -66,7 +66,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-[10px] uppercase tracking-[0.5em] text-[#D4AF37] font-bold mb-6 block"
+            className="text-[10px] uppercase tracking-[0.5em] text-gold font-bold mb-6 block"
           >
             Artisanal Beauty Rituals
           </motion.span>
@@ -74,16 +74,16 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl sm:text-5xl md:text-8xl font-heading leading-[1.1] mb-6 md:mb-8 text-[#2D2D2D]"
+            className="text-4xl sm:text-5xl md:text-8xl font-heading leading-[1.1] mb-6 md:mb-8 text-charcoal"
           >
             Elevate Your <br />
-            <span className="italic font-light text-[#D4AF37]">Natural Glow</span>
+            <span className="italic font-light text-gold">Natural Glow</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-base md:text-lg text-[#2D2D2D]/60 max-w-lg mb-8 md:mb-12 leading-relaxed"
+            className="text-base md:text-lg text-charcoal/60 max-w-lg mb-8 md:mb-12 leading-relaxed"
           >
             Discover our curated collection of botanical-infused formulas designed to nourish your skin and inspire a moment of daily tranquility.
           </motion.p>
@@ -96,7 +96,7 @@ const Hero = () => {
             <Link href="/shop" className="btn-premium">
               Shop Now
             </Link>
-            <Link href="/about" className="text-[10px] uppercase tracking-widest font-bold text-[#2D2D2D] hover:text-[#D4AF37] transition-colors flex items-center gap-2 group">
+            <Link href="/about" className="text-[10px] uppercase tracking-widest font-bold text-charcoal hover:text-gold transition-colors flex items-center gap-2 group">
               Our Story <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           </motion.div>
@@ -129,7 +129,7 @@ const Hero = () => {
                   className="w-full h-full object-cover"
                 />
               </AnimatePresence>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2D2D2D]/20 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 to-transparent pointer-events-none" />
             </div>
 
             {/* Floating Info Badge */}
@@ -142,10 +142,10 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="absolute -bottom-6 -left-4 sm:-bottom-8 sm:-left-8 glass p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-premium max-w-[180px] sm:max-w-[220px] z-20"
               >
-                <p className="text-[9px] uppercase tracking-widest text-[#D4AF37] font-bold mb-2">
+                <p className="text-[9px] uppercase tracking-widest text-gold font-bold mb-2">
                   {carouselProducts[currentIndex].badge}
                 </p>
-                <p className="text-sm font-heading font-medium text-[#2D2D2D]">
+                <p className="text-sm font-heading font-medium text-charcoal">
                   {carouselProducts[currentIndex].name}
                 </p>
               </motion.div>
@@ -158,7 +158,7 @@ const Hero = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-1 transition-all duration-500 rounded-full ${currentIndex === index ? 'w-8 bg-[#D4AF37]' : 'w-2 bg-[#D4AF37]/20'}`}
+                className={`h-1 transition-all duration-500 rounded-full ${currentIndex === index ? 'w-8 bg-gold' : 'w-2 bg-gold/20'}`}
               />
             ))}
           </div>
