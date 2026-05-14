@@ -16,7 +16,7 @@ const BestSellers = () => {
   }, []);
 
   return (
-    <section className="py-24 md:py-40 bg-white overflow-hidden">
+    <section className="py-24 md:py-40 bg-beauty-bg overflow-hidden">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 md:gap-12 mb-16 md:mb-32">
           <div className="max-w-xl">

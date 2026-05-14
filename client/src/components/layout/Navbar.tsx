@@ -28,10 +28,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'glass py-4' : 'bg-transparent py-8'} ${useLightText ? 'text-[#FFF8F0]' : ''}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'glass py-4' : 'bg-transparent py-8'} ${useLightText ? 'text-cream' : ''}`}>
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className={`text-xl sm:text-2xl md:text-3xl font-heading font-bold tracking-tighter group ${useLightText ? 'text-[#FFF8F0]' : ''}`}>
+        <Link href="/" className={`text-xl sm:text-2xl md:text-3xl font-heading font-bold tracking-tighter group ${useLightText ? 'text-cream' : ''}`}>
           PEACHY CHERIE<span className={`${useLightText ? 'text-gold' : 'text-gold'} group-hover:text-charcoal transition-colors duration-500`}>.</span>
         </Link>
 

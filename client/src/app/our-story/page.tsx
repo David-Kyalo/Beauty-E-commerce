@@ -91,7 +91,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* Mission Statement */}
-      <section className="py-24 md:py-40 bg-white">
+      <section className="py-24 md:py-40 bg-beauty-bg">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
             <motion.div {...fadeUp}>
@@ -187,7 +187,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* Timeline / Journey */}
-      <section className="py-40 bg-white">
+      <section className="py-24 md:py-40 bg-beauty-bg">
         <div className="container-custom">
           <motion.div {...fadeUp} className="max-w-xl mb-24">
             <span className="text-[10px] uppercase tracking-[0.4em] text-gold font-bold mb-4 block">

@@ -23,7 +23,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-40 bg-[#FDFBF9] overflow-hidden">
+    <section className="py-40 bg-beauty-bg overflow-hidden">
       <div className="container-custom">
         <div className="text-center mb-32">
           <span className="text-[10px] uppercase tracking-[0.4em] text-gold font-bold mb-6 block">Community Voices</span>

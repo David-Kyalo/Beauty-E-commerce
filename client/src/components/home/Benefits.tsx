@@ -28,7 +28,7 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="py-20 md:py-32 bg-beauty-bg">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
           {benefits.map((benefit, i) => (
@@ -40,13 +40,13 @@ const Benefits = () => {
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="group text-center lg:text-left"
             >
-              <div className="w-16 h-16 rounded-2xl bg-[#F9E3E3]/30 flex items-center justify-center text-[#D4AF37] mb-8 mx-auto lg:mx-0 group-hover:bg-[#D4AF37] group-hover:text-white transition-all duration-500">
+              <div className="w-16 h-16 rounded-2xl bg-peachy-soft/30 flex items-center justify-center text-gold mb-8 mx-auto lg:mx-0 group-hover:bg-gold group-hover:text-white transition-all duration-500">
                 <benefit.icon size={28} strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-heading font-medium text-[#2D2D2D] mb-4 group-hover:text-[#D4AF37] transition-colors">
+              <h3 className="text-xl font-heading font-medium text-charcoal mb-4 group-hover:text-gold transition-colors">
                 {benefit.title}
               </h3>
-              <p className="text-sm text-[#2D2D2D]/50 leading-relaxed font-light">
+              <p className="text-sm text-charcoal/50 leading-relaxed font-light">
                 {benefit.description}
               </p>
             </motion.div>

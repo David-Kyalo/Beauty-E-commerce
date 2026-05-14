@@ -40,7 +40,7 @@ export default function Footer() {
               placeholder="Your Email" 
               className="bg-transparent border-none outline-none flex-1 px-8 py-4 text-sm placeholder:text-white/40"
             />
-            <button className="bg-white text-footer-top px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-gold hover:text-white transition-all">
+            <button className="bg-white text-footer-top px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:bg-footer-gold hover:text-white transition-all">
               Subscribe <ArrowUpRight size={14} />
             </button>
           </motion.div>
@@ -54,19 +54,19 @@ export default function Footer() {
             {/* Brand Column */}
             <div className="space-y-6 md:space-y-8">
               <h3 className="text-2xl md:text-3xl font-heading font-bold text-white tracking-tighter">
-                Peachy Cherie<span className="text-gold">.</span>
+                Peachy Cherie<span className="text-footer-gold">.</span>
               </h3>
               <p className="text-sm leading-relaxed font-light max-w-xs">
                 Powered by nature, backed by science. Gentle on your skin, fierce on results.
               </p>
               <div className="flex gap-4">
-                <Link href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-white transition-all">
+                <Link href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-footer-gold hover:text-white transition-all">
                   <Facebook size={18} />
                 </Link>
-                <Link href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-white transition-all">
+                <Link href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-footer-gold hover:text-white transition-all">
                   <Linkedin size={18} />
                 </Link>
-                <Link href="https://www.instagram.com/peachycherie.ke/" target="_blank" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-white transition-all">
+                <Link href="https://www.instagram.com/peachycherie.ke/" target="_blank" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-footer-gold hover:text-white transition-all">
                   <Instagram size={18} />
                 </Link>
               </div>
@@ -76,11 +76,11 @@ export default function Footer() {
             <div className="space-y-6 md:space-y-8">
               <h4 className="text-lg md:text-xl font-heading text-white font-medium">Navigation</h4>
               <ul className="space-y-3 md:space-y-4 text-sm font-light">
-                <li><Link href="/" className="hover:text-gold transition-colors">Home</Link></li>
-                <li><Link href="/pages" className="hover:text-gold transition-colors">Pages</Link></li>
-                <li><Link href="/about" className="hover:text-gold transition-colors">About Us</Link></li>
-                <li><Link href="/services" className="hover:text-gold transition-colors">Services</Link></li>
-                <li><Link href="/404" className="hover:text-gold transition-colors">404</Link></li>
+                <li><Link href="/" className="hover:text-footer-gold transition-colors">Home</Link></li>
+                <li><Link href="/pages" className="hover:text-footer-gold transition-colors">Pages</Link></li>
+                <li><Link href="/about" className="hover:text-footer-gold transition-colors">About Us</Link></li>
+                <li><Link href="/services" className="hover:text-footer-gold transition-colors">Services</Link></li>
+                <li><Link href="/404" className="hover:text-footer-gold transition-colors">404</Link></li>
               </ul>
             </div>
 
@@ -88,11 +88,11 @@ export default function Footer() {
             <div className="space-y-6 md:space-y-8">
               <h4 className="text-lg md:text-xl font-heading text-white font-medium">Quick Links</h4>
               <ul className="space-y-3 md:space-y-4 text-sm font-light">
-                <li><Link href="/contact" className="hover:text-gold transition-colors">Contact Us</Link></li>
-                <li><Link href="/faq" className="hover:text-gold transition-colors">FAQ</Link></li>
-                <li><Link href="/blog" className="hover:text-gold transition-colors">Blog</Link></li>
-                <li><Link href="/gallery" className="hover:text-gold transition-colors">Gallery</Link></li>
-                <li><Link href="/pricing" className="hover:text-gold transition-colors">Pricing</Link></li>
+                <li><Link href="/contact" className="hover:text-footer-gold transition-colors">Contact Us</Link></li>
+                <li><Link href="/faq" className="hover:text-footer-gold transition-colors">FAQ</Link></li>
+                <li><Link href="/blog" className="hover:text-footer-gold transition-colors">Blog</Link></li>
+                <li><Link href="/gallery" className="hover:text-footer-gold transition-colors">Gallery</Link></li>
+                <li><Link href="/pricing" className="hover:text-footer-gold transition-colors">Pricing</Link></li>
               </ul>
             </div>
 
@@ -102,7 +102,7 @@ export default function Footer() {
               <ul className="space-y-4 md:space-y-6 text-sm font-light">
                 <li className="flex flex-col gap-1">
                   <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Call Us</span>
-                  <Link href="tel:+1051152920" className="text-white hover:text-gold transition-colors">(105) 115-2920</Link>
+                  <Link href="tel:+1051152920" className="text-white hover:text-footer-gold transition-colors">(105) 115-2920</Link>
                 </li>
                 <li className="flex flex-col gap-1">
                   <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Location</span>
@@ -110,7 +110,7 @@ export default function Footer() {
                 </li>
                 <li className="flex flex-col gap-1">
                   <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold">Email</span>
-                  <Link href="mailto:hello@peachycherie.com" className="text-white hover:text-gold transition-colors">hello@peachycherie.com</Link>
+                  <Link href="mailto:hello@peachycherie.com" className="text-white hover:text-footer-gold transition-colors">hello@peachycherie.com</Link>
                 </li>
               </ul>
             </div>
